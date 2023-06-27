@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./list.css"
 import useFetchData from '../../methods/useFetch'
 import API from '../../assets/api'
 import Card from '../card/Card'
+import Spinner from '../../coreComponents/spinner/Spinner'
 
 const List = () => {
     const { data, setData, isLoading, error } = useFetchData(API.userListUrl)
@@ -12,7 +13,7 @@ const List = () => {
     }
     return (
         <div className="card-list" >
-            {data == null ? <h1>Loading...</h1> : data.map((user) => {
+            {isLoading || data == null ? <Spinner /> : data.map((user) => {
                 return (
 
                     <div className="cards" key={user.id} ><Card removeUser={removeUser} user={user} /></div>

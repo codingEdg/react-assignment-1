@@ -18,7 +18,7 @@ const Card = ({ removeUser, user }) => {
         <div className="card-container">
             {isModalOpen && <Modal user={user} onRequestClose={toggleModal} />}
 
-            <img className="w-full" src="https://avatars.dicebear.com/v2/avataaars/Kamren.svg?options[mood][]=happy" alt="Sunset in the mountains" />
+            <img className="w-full" src={`https://avatars.dicebear.com/v2/avataaars/${user.username}.svg?options[mood][]=happy`} alt="Sunset in the mountains" />
             <div className="info-container">
                 <h3 >{user.name}</h3>
 
