@@ -27,11 +27,11 @@ const Card = ({ removeUser, user, setData, id }) => {
 
             </div>
             <ul className="icons  px-6 pt-4 pb-2">
-                <li className="heart" onClick={() => heart ? setHeart(false) : setHeart(true)} > {heart ? <AiOutlineHeart /> : <AiFillHeart />}</li>
+                <li className="heartIcon" onClick={() => heart ? setHeart(false) : setHeart(true)} > {heart ? <AiOutlineHeart /> : <AiFillHeart />}</li>
                 <li className="pipe" >|</li>
-                <li onClick={() => setIsModalOpen(true)} ><AiFillEdit /></li>
+                <li className="editIcon" onClick={() => setIsModalOpen(true)} ><AiFillEdit /></li>
                 <li className="pipe" >|</li>
-                <li onClick={() => removeUser(user.id)} ><AiFillDelete /></li>
+                <li className="deleteIcon" onClick={() => removeUser(user.id)} ><AiFillDelete /></li>
             </ul>
         </div>
 

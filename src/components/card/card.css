@@ -44,7 +44,6 @@
 }
 
 .card-container .icons {
-  cursor: pointer;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -61,8 +60,13 @@
   color: #eeecec;
   font-size: 2rem;
 }
-.heart {
+.heartIcon {
   color: red;
+}
+
+.editIcon,
+.heartIcon,
+.deleteIcon {
   cursor: pointer;
 }
 
