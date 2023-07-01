@@ -3,25 +3,24 @@ import { useState } from "react"
 import Modal from "../modal/Modal"
 import { AiFillEdit, AiFillDelete, AiOutlineHeart, AiFillHeart, AiOutlineMail, AiOutlinePhone, AiOutlineGlobal } from 'react-icons/ai'
 
-const Card = ({ removeUser, user }) => {
+const Card = ({ removeUser, user, setData, id }) => {
     const [heart, setHeart] = useState(true)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
-    };
+    }
 
 
 
     return (
 
         <div className="card-container">
-            {isModalOpen && <Modal user={user} onRequestClose={toggleModal} />}
+            {isModalOpen && <Modal id={id} setData={setData} user={user} onRequestClose={toggleModal} />}
 
             <img className="w-full" src={`https://avatars.dicebear.com/v2/avataaars/${user.username}.svg?options[mood][]=happy`} alt="Sunset in the mountains" />
             <div className="info-container">
-                <h3 >{user.name}</h3>
-
+                <div className="heading"><h4 >{user.name}</h4></div>
                 <div className="text-info"> <AiOutlineMail /><p  >{user.email}</p> </div>
                 <div className="text-info"><AiOutlinePhone /><p  >{user.phone}</p> </div>
                 <div className="text-info"><AiOutlineGlobal /><p >{user.website}</p> </div>
